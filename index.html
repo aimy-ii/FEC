@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Долг Эксперт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Боковое меню -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.svg" alt="Долг Эксперт">
+                <span class="beta-tag">beta</span>
+            </div>
+            
+            <nav>
+                <div class="nav-section">
+                    <h2>CRM</h2>
+                    <ul>
+                        <li><a href="#" data-tab="debtors"><i class="icon-users"></i> Должники</a></li>
+                        <li>
+                            <a href="#" data-tab="procedures"><i class="icon-procedures"></i> Процедуры</a>
+                            <span class="badge"></span>
+                        </li>
+                        <li><a href="#" data-tab="tasks"><i class="icon-tasks"></i> Задачи</a></li>
+                        <li><a href="#" data-tab="calendar"><i class="icon-calendar"></i> Календарь</a></li>
+                        <li><a href="#" data-tab="meetings"><i class="icon-meetings"></i> Собрания</a></li>
+                        <li><a href="#" data-tab="email"><i class="icon-email"></i> Email</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h2>СООБЩЕСТВО</h2>
+                    <ul>
+                        <li><a href="#" data-tab="club"><i class="icon-club"></i> Клуб</a></li>
+                        <li><a href="#" data-tab="marketplace"><i class="icon-marketplace"></i> Маркетплейс</a></li>
+                        <li><a href="#" data-tab="ratings"><i class="icon-ratings"></i> Рейтинги</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search">
+                    <input type="search" placeholder="Поиск...">
+                </div>
+                <div class="top-actions">
+                    <button class="theme-toggle"></button>
+                    <button class="notifications"></button>
+                    <div class="user-profile">
+                        <span>Владислав</span>
+                        <img src="avatar.jpg" alt="Профиль">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Контейнеры для разных вкладок -->
+            <div id="tasks" class="tab-content">
+                <div class="tasks-container">
+                    <h1>Задачи <i class="icon-info"></i></h1>
+                    
+                    <div class="tasks-controls">
+                        <button class="add-task">Добавить задачу</button>
+                        <input type="search" placeholder="Поиск" class="task-search">
+                    </div>
+
+                    <div class="tasks-filters">
+                        <!-- Фильтры задач -->
+                    </div>
+
+                    <div class="tasks-list">
+                        <!-- Список задач -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="calendar" class="tab-content">
+                <div class="calendar-container">
+                    <h1>Календарь <i class="icon-info"></i></h1>
+                    
+                    <div class="calendar-controls">
+                        <button class="add-task">Добавить задачу</button>
+                        
+                        <div class="calendar-navigation">
+                            <button class="nav-btn"><i class="icon-chevron-left"></i></button>
+                            <h2>январь 2025 г.</h2>
+                            <button class="nav-btn"><i class="icon-chevron-right"></i></button>
+                        </div>
+                        
+                        <div class="view-controls">
+                            <button class="view-btn active">Месяц</button>
+                            <button class="view-btn">Неделя</button>
+                            <button class="view-btn">День</button>
+                            <button class="view-btn">Повестка Дня</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div class="calendar-header">
+                            <div class="weekday">пн</div>
+                            <div class="weekday">вт</div>
+                            <div class="weekday">ср</div>
+                            <div class="weekday">чт</div>
+                            <div class="weekday">пт</div>
+                            <div class="weekday">сб</div>
+                            <div class="weekday">вс</div>
+                        </div>
+                        
+                        <div class="calendar-days">
+                            <div class="day prev-month">30</div>
+                            <div class="day prev-month">31</div>
+                            <div class="day">1</div>
+                            <div class="day">2</div>
+                            <div class="day">3</div>
+                            <div class="day">4</div>
+                            <div class="day">5</div>
+                            <div class="day">6</div>
+                            <div class="day">7</div>
+                            <div class="day">8</div>
+                            <div class="day">9</div>
+                            <div class="day">10</div>
+                            <div class="day">11</div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day">15</div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day">20</div>
+                            <div class="day">21</div>
+                            <div class="day">22</div>
+                            <div class="day">23</div>
+                            <div class="day">24</div>
+                            <div class="day">25</div>
+                            <div class="day">26</div>
+                            <div class="day">27</div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                            <div class="day">31</div>
+                            <div class="day next-month">1</div>
+                            <div class="day next-month">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="email" class="tab-content">
+                <div class="email-container">
+                    <h1>Почта</h1>
+                    
+                    <div class="email-layout">
+                        <!-- Левая панель с кнопкой создания -->
+                        <div class="email-sidebar">
+                            <button class="compose-btn">
+                                <i class="icon-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Основная область для писем -->
+                        <div class="email-content">
+                            <div class="email-search">
+                                <input type="search" placeholder="Поиск" class="search-input">
+                            </div>
+                            
+                            <!-- Здесь будет список писем -->
+                            <div class="email-list">
+                                <!-- Письма будут добавляться динамически -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="procedures" class="tab-content">
+                <div class="procedures-container">
+                    <h1>Процедуры <i class="icon-info"></i></h1>
+                    
+                    <div class="procedures-controls">
+                        <button class="add-procedure">
+                            <i class="icon-plus"></i> Добавить
+                        </button>
+                    </div>
+
+                    <div class="procedures-filters">
+                        <div class="filter-group">
+                            <label>Тип должника</label>
+                            <select>
+                                <option value="">Выберите тип</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Тип процедуры</label>
+                            <select>
+                                <option value="">Выберите тип</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Статус</label>
+                            <select>
+                                <option value="">Выберите статус</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Ответственный</label>
+                            <select>
+                                <option value="">Выберите ответственного</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="procedures-table">
+                        <div class="table-header">
+                            <div class="header-cell">ПРОЦЕДУРА <i class="icon-sort"></i></div>
+                            <div class="header-cell">ДАТА ЗАВЕРШЕНИЯ <i class="icon-sort"></i></div>
+                            <div class="header-cell">БАЛАНС <i class="icon-sort"></i></div>
+                            <div class="header-cell"></div>
+                        </div>
+                        
+                        <div class="table-body">
+                            <!-- Здесь будут строки с процедурами -->
+                        </div>
+                    </div>
+
+                    <div class="table-footer">
+                        <div class="items-found">Найдено всего: 0</div>
+                        <div class="pagination">
+                            <span>1</span>
+                            <span>по</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="debtors" class="tab-content">
+                <div class="debtors-container">
+                    <h1>Должники <i class="icon-info"></i></h1>
+                    
+                    <div class="debtors-controls">
+                        <div class="control-buttons">
+                            <button class="add-debtor">
+                                <i class="icon-plus"></i> Добавить
+                            </button>
+                            <button class="download-btn">
+                                <i class="icon-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="debtors-filters">
+                        <div class="filter-group">
+                            <label>Поиск</label>
+                            <input type="text" class="search-input" placeholder="Поиск">
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Регион</label>
+                            <select>
+                                <option value="">Выберите регион</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Статус</label>
+                            <select>
+                                <option value="">Выберите статус</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="debtors-table">
+                        <div class="table-header">
+                            <div class="header-cell">ФИО <i class="icon-sort"></i></div>
+                            <div class="header-cell">РЕГИОН <i class="icon-sort"></i></div>
+                            <div class="header-cell">СТАТУС <i class="icon-sort"></i></div>
+                            <div class="header-cell"></div>
+                        </div>
+                        
+                        <div class="table-body">
+                            <!-- Здесь будут строки с должниками -->
+                        </div>
+                    </div>
+
+                    <div class="table-footer">
+                        <div class="items-found">Найдено всего: 2</div>
+                        <div class="pagination">
+                            <span>1</span>
+                            <span>по</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript для переключения вкладок
+        document.addEventListener('DOMContentLoaded', function() {
+            // Скрываем все вкладки кроме первой
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.style.display = 'none');
+            tabContents[0].style.display = 'block';
+
+            // Обработчик клика по пунктам меню
+            document.querySelectorAll('[data-tab]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Скрываем все вкладки
+                    tabContents.forEach(tab => tab.style.display = 'none');
+                    
+                    // Показываем нужную вкладку
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).style.display = 'block';
+                    
+                    // Обновляем активный пункт меню
+                    document.querySelectorAll('.nav-section li').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.parentElement.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

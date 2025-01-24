@@ -1,0 +1,510 @@
+:root {
+    --primary-color: #E31E24;
+    --sidebar-bg: #F8F9FA;
+    --text-color: #333;
+    --border-color: #E5E7EB;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* Боковое меню */
+.sidebar {
+    background: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.beta-tag {
+    font-size: 0.75rem;
+    color: #666;
+    margin-left: 0.5rem;
+}
+
+.nav-section {
+    margin-bottom: 2rem;
+}
+
+.nav-section h2 {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.nav-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-section li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-section a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.nav-section li.active a {
+    background: rgba(227, 30, 36, 0.1);
+    color: var(--primary-color);
+}
+
+/* Основной контент */
+.main-content {
+    padding: 1.5rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.tasks-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tasks-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-task {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.task-search {
+    flex: 1;
+    max-width: 300px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+/* Стили для задач и фильтров можно добавить по необходимости */
+
+.calendar-container {
+    padding: 20px;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.view-controls {
+    display: flex;
+    gap: 0.5rem;
+    background: #f1f1f1;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.view-btn.active {
+    background: white;
+    color: var(--primary-color);
+}
+
+.calendar-grid {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.weekday {
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+.day:nth-child(7n) {
+    border-right: none;
+}
+
+.prev-month,
+.next-month {
+    color: #999;
+    background: #fafafa;
+}
+
+/* Добавьте стили для адаптивности при необходимости */
+@media (max-width: 768px) {
+    .calendar-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .view-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Стили для почтового интерфейса */
+.email-container {
+    padding: 20px;
+    height: calc(100vh - 100px);
+}
+
+.email-layout {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.email-sidebar {
+    padding: 16px;
+    border-right: 1px solid var(--border-color);
+}
+
+.compose-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.compose-btn:hover {
+    background: #c91920;
+}
+
+.email-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.email-search {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.email-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .email-layout {
+        grid-template-columns: 50px 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .email-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .email-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+/* Стили для страницы процедур */
+.procedures-container {
+    padding: 20px;
+}
+
+.procedures-controls {
+    margin-bottom: 2rem;
+}
+
+.add-procedure {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.add-procedure:hover {
+    background: #f8f9fa;
+}
+
+.procedures-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.filter-group select {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: white;
+    width: 100%;
+}
+
+.procedures-table {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 60px;
+    background: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-cell {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.table-body {
+    background: white;
+    min-height: 200px;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .procedures-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .table-header {
+        grid-template-columns: 1fr auto auto;
+    }
+
+    .header-cell:last-child {
+        display: none;
+    }
+}
+
+/* Стили для вкладок */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Стили для страницы должников */
+.debtors-container {
+    padding: 20px;
+}
+
+.debtors-controls {
+    margin-bottom: 2rem;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.add-debtor {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.download-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.add-debtor:hover,
+.download-btn:hover {
+    background: #f8f9fa;
+}
+
+.debtors-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.debtors-filters .search-input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.debtors-table {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Используем те же стили для таблицы, что и в процедурах */
+.debtors-table .table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 60px;
+    background: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.debtors-table .table-body {
+    min-height: 200px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .debtors-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .debtors-table .table-header {
+        grid-template-columns: 1fr auto auto;
+    }
+
+    .header-cell:last-child {
+        display: none;
+    }
+} 
